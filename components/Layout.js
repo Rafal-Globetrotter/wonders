@@ -7,10 +7,10 @@ export default function Layout({ children }) {
         <Link href="/">
           <a>
             <h1>
-              <span>Just Add</span>
-              <span>Marmite</span>
+              <span>Wonders of the Planet</span>
+              <span>Are you making plans for vacations?</span>
             </h1>
-            <h2>Spread your legs Bitch</h2>
+            <h2>Check those places first of all</h2>
           </a>
         </Link>
       </header>
@@ -20,7 +20,7 @@ export default function Layout({ children }) {
       </div>
 
       <footer>
-        <p>Copyright 2021 Just Add Marmite :)</p>
+        <p>Copyright 2021 All Wonders in One Place</p>
       </footer>
     </div>
   )

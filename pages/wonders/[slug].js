@@ -2,6 +2,7 @@ import { createClient } from 'contentful';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import Image from 'next/image';
 import Scafold from '../../components/Scafold';
+import Link from 'next/link';
 
 
 const client = createClient({
@@ -53,32 +54,32 @@ export const getStaticProps = async ({ params }) => {
 export default function RecipeDetails({ movie }) {
     if (!movie) return <Scafold />
 
-  const { featuredImage, title, cookingTime, ingredients, method } = movie.fields
+  const { featuredImage, title, distanceFromLondon, countryOfDestination, thingstoknow } = movie.fields
   
 
   return (
     <div>
       <div className="banner">
+      <div className="return">
+          <Link href='/'><a>Return to the MainPage</a></Link>
+        </div>
         <Image 
           src={'https:' + featuredImage.fields.file.url}
-          width={featuredImage.fields.file.details.image.width}
-          height={featuredImage.fields.file.details.image.height}
+          width={1200}
+          height={800}
         />
         <h2>{ title }</h2>
       </div>
 
       <div className="info">
-        <p>Takes about { cookingTime } mins to cook.</p>
-        <h3>Ingredients:</h3>
+        <p>{title} is placed { distanceFromLondon } from London</p>
+        <h3>The country you need to discover is: {countryOfDestination}</h3>
 
-        {ingredients.map(ing => (
-          <span key={ing}>{ ing }</span>
-        ))}
       </div>
         
       <div className="method">
-        <h3>Method:</h3>
-        <div>{documentToReactComponents(method)}</div>
+        <h3>Things you need to know:</h3>
+        <div>{documentToReactComponents(thingstoknow)}</div>
       </div>
 
       <style jsx>{`

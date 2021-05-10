@@ -12,23 +12,23 @@ export async function getStaticProps() {
 
 	return {
 		props: {
-			moviescontent: res.items
+			wonderscontent: res.items
 		},
 		revalidate: 1
 	}
 }
 
-export default function Recipes({ moviescontent }) {
-  console.log(moviescontent)
+export default function Recipes({ wonderscontent }) {
+ 
 
   return (
-    <div className="recipe-list">
-     {moviescontent.map(movie => (
-    <Card key={movie.sys.id} movie={movie} />
+    <div className="wonder-list">
+     {wonderscontent.map(wonder => (
+    <Card key={wonder.sys.id} wonder={wonder} />
      	))}
 
      <style jsx>{`
-          .recipe-list {
+          .wonder-list {
           	display: grid;
           	grid-template-columns: 1fr 1fr;
           	grid-gap: 20px 60px;

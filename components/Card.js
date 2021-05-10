@@ -1,30 +1,33 @@
 import Link from 'next/link'
 import Image from 'next/image'
 
-export default function Card({ movie }) {
-  const { title, slug, cookingTime, thumbnail } = movie.fields
+export default function Card({ wonder }) {
+  const { title, slug, distanceFromLondon, thumbnail } = wonder.fields
 
   return (
     <div className="card">
       <div className="featured">
+       <Link href={'/wonders/' + slug}><a>
         <Image 
           src={'https:' + thumbnail.fields.file.url}
-          width={500}
-          height={400}
+          width={550}
+          height={420}
         />
+        </a></Link>
       </div>
       <div className="content">
         <div className="info">
           <h4>{ title }</h4>
-          <p>Takes approx { cookingTime } mins to make</p>
+          <p>{title} is about { distanceFromLondon } from London</p>
         </div>
         <div className="actions">
-          <Link href={'/recipes/' + slug}><a>Cook this</a></Link>
+          <Link href={'/wonders/' + slug}><a>Find out more</a></Link>
         </div>
       </div>
       <style jsx>{`
         .card {
-          transform: rotateZ(-1deg);
+          
+           border-radius: 50%;
         }
         .content {
           background: #fff;
@@ -33,9 +36,10 @@ export default function Card({ movie }) {
           position: relative;
           top: -40px;
           left: -10px;
+           border-radius: 5%;
         }
         .info {
-          padding: 16px;
+          padding: 10px;
         }
         .info h4 {
           margin: 4px 0;
@@ -46,15 +50,17 @@ export default function Card({ movie }) {
           color: #777;
         }
         .actions {
-          margin-top: 20px;
+          margin-top: 5px;
           display: flex;
-          justify-content: flex-end;
+          justify-content: flex-center;
+          border-radius: 5%;
         }
         .actions a {
           color: #fff;
-          background: #f01b29;
+          background: #7a49a5;
           padding: 16px 24px;
           text-decoration: none;
+          border-radius: 5%;
         }
       `}</style>
     </div>
