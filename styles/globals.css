@@ -41,11 +41,12 @@ header span:first-child {
   font-weight: 800;
 }
 header span:last-child {
-  margin-top: 5px;
+  margin-top: 20px;
   font-size: 0.8em;
   font-weight: 400;
 }
 header h2 {
+  margin-top: 15px;
   font-size: 1.2em;
   font-weight: 400;
 }

@@ -18,7 +18,7 @@ export async function getStaticProps() {
 	}
 }
 
-export default function Recipes({ wonderscontent }) {
+export default function Wonders({ wonderscontent }) {
  
 
   return (
@@ -31,7 +31,7 @@ export default function Recipes({ wonderscontent }) {
           .wonder-list {
           	display: grid;
           	grid-template-columns: 1fr 1fr;
-          	grid-gap: 20px 60px;
+          	grid-gap: 20px 40px;
           }
      	`}</style>
     </div>
